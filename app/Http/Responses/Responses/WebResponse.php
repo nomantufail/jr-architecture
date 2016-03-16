@@ -20,17 +20,19 @@ class WebResponse extends AppResponse implements ResponseInterface
 
     /**
      * @param $data
+     * @return json
      * @description
      * following function accepts data from
      * controllers and return a pre-setted view.
      **/
     public function respond(array $data)
     {
-
+        return view($this->view)->with('data',$data);
     }
 
     public function setView($viewName)
     {
         $this->view = $viewName;
+        return $this;
     }
 }

@@ -52,5 +52,8 @@ class Kernel extends HttpKernel
         'apiAuthenticate' => \App\Http\Middleware\Authenticator\ApiAuthenticator::class,
         'apiAuthorize' => \App\Http\Middleware\Authorizer\ApiAuthorizer::class,
         'apiValidate' => \App\Http\Middleware\Validator\ApiValidator::class,
+        'webAuthenticate' => \App\Http\Middleware\Authenticator\WebAuthenticator::class,
+        'webAuthorize' => \App\Http\Middleware\Authorizer\WebAuthorizer::class,
+        'webValidate' => \App\Http\Middleware\Validator\WebValidator::class,
     ];
 }

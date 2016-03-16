@@ -9,12 +9,11 @@
 namespace App\Transformers\Response;
 
 
-trait UserTransformer{
-    use ResponseTransformer;
+class UserTransformer extends ResponseTransformer{
 
     public function transform($data){
         return [
-            'name'=>$data['name'],
+            'username'=>$data['name'],
         ];
     }
 } 

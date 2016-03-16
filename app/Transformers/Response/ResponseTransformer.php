@@ -6,12 +6,11 @@
  * Time: 9:54 PM
  */
 
-namespace App\Transformers\Request;
+namespace App\Transformers\Response;
 
 
 use App\Transformers\Transformer;
 
-trait ResponseTransformer{
-    use Transformer;
+class ResponseTransformer extends Transformer{
 
 } 

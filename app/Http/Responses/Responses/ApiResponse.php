@@ -19,6 +19,7 @@ class ApiResponse extends AppResponse implements ResponseInterface
 
     /**
      * @param $data
+     * @return json
      * @description
      * following function accepts data from
      * controllers and return a pre-setted view.
