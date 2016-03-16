@@ -10,15 +10,15 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-Route::get('/users/add',
+Route::get('/user/add',
     [
         'middleware'=>
-        [
-            'apiAuthenticate:addUserRequest',
-            'apiAuthorize:addUserRequest',
-            'apiValidate:addUserRequest'
-        ],
-        'uses'=>'HomeController@store'
+            [
+                'apiAuthenticate:addUserRequest',
+                'apiAuthorize:addUserRequest',
+                'apiValidate:addUserRequest'
+            ],
+        'uses'=>'UsersController@store'
     ]
 );
 /*

@@ -6,14 +6,15 @@
  * Time: 9:54 PM
  */
 
-namespace App\Transformers\Request;
+namespace App\Transformers\Response;
 
 
-class AddUserTransformer extends RequestTransformer{
+trait UserTransformer{
+    use ResponseTransformer;
 
     public function transform($data){
         return [
-            'name'=>$data['username'],
+            'name'=>$data['name'],
         ];
     }
 } 

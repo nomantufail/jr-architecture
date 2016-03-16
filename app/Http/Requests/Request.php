@@ -2,16 +2,19 @@
 
 namespace App\Http\Requests;
 
+use App\Transformers\Transformer;
+
 abstract class Request
 {
     public $transformedValues = [];
-
-    public function __construct(){
-        $this->transformedValues = $this->transform(request()->all());
+    public $transformer = null;
+    public function __construct(Transformer $transformer){
+        $this->transformer = $transformer;
+        $this->transformedValues = $this->transformer->transform(request()->all());
     }
 
     public function get($key){
-
+        return (isset($this->transformedValues[$key]))?$this->transformedValues[$key]:null;
     }
 
     public function all(){

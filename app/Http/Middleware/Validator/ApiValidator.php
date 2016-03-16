@@ -17,7 +17,7 @@ class ApiValidator
     public function handle($request, Closure $next, $customRequest)
     {
         $customRequest = ucfirst($customRequest);
-        dd((new $customRequest)->all());
+
         return $next($request);
     }
 }

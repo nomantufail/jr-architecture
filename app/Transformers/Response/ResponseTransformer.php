@@ -11,6 +11,7 @@ namespace App\Transformers\Request;
 
 use App\Transformers\Transformer;
 
-class RequestTransformer extends Transformer{
+trait ResponseTransformer{
+    use Transformer;
 
 } 
