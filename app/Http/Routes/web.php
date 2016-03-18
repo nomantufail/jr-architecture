@@ -11,16 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/user/add',
+    [
+        'middleware'=>
+            [
+                'webAuthenticate:addUserRequest',
+                'webAuthorize:addUserRequest',
+                'webValidate:addUserRequest'
+            ],
+        'uses'=>'UsersController@store'
+    ]
+);
 
-Route::get('/hello', 'HomeController@index');
-Route::group(['domain' => '{account}.localhost/learning/collaborators/public/'], function () {
-    Route::get('hi', function ($account, $id) {
-
-    });
-});
 /*
 |--------------------------------------------------------------------------
 | Application Routes

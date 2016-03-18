@@ -9,7 +9,7 @@
 namespace App\Transformers;
 
 
-trait Transformer {
+abstract class Transformer {
 
     public function transformCollection(array $records){
 

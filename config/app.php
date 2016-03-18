@@ -206,7 +206,7 @@ return [
          * Requests Aliases
          * -----------------------------------------------------------
          * */
-        'AddUserRequest' => \App\Http\Requests\User\AddUser::class,
+        'AddUserRequest' => \App\Http\Requests\Requests\User\AddUserRequest::class,
 
     ],
 
