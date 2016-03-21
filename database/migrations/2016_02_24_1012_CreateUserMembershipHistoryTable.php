@@ -18,6 +18,7 @@ class CreateUserMembershipHistoryTable extends Migration
             $table->integer('membership_plane_id')->unsigned();
             $table->integer('from');
             $table->integer('to');
+            $table->timestamps();
 
             $table->foreign('user_id')
                 ->references('id')->on('users')

@@ -16,6 +16,7 @@ class CreateAgencyCitiesTable extends Migration
             $table->increments('id');
             $table->integer('agency_id')->unsigned();
             $table->integer('city_id')->unsigned();
+            $table->timestamps();
 
 
             $table->foreign('agency_id')
