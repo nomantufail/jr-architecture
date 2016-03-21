@@ -10,6 +10,15 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+Route::post('/login',
+    [
+        'middleware'=>
+            [
+                //'apiValidate:authenticationRequest'
+            ],
+        'uses'=>'Auth\AuthController@login'
+    ]
+);
 Route::get('/user/add',
     [
         'middleware'=>

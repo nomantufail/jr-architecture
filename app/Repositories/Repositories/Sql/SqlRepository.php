@@ -6,9 +6,9 @@
  * Time: 9:57 AM
  */
 
-namespace App\Repositories\Sql;
+namespace App\Repositories\Repositories\Sql;
 
-use App\Repositories\Repository;
+use App\Repositories\Repositories\Repository;
 
 abstract class SqlRepository extends Repository
 {

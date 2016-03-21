@@ -156,6 +156,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * Repositories Service Providers...
+         */
+        App\Providers\Repositories\UsersRepositoryProvider::class,
+
     ],
 
     /*
@@ -207,6 +212,7 @@ return [
          * -----------------------------------------------------------
          * */
         'AddUserRequest' => \App\Http\Requests\Requests\User\AddUserRequest::class,
+        'AuthenticationRequest' => \App\Http\Requests\Requests\Auth\AuthenticationRequest::class,
 
     ],
 
