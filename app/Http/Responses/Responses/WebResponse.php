@@ -25,7 +25,7 @@ class WebResponse extends AppResponse implements ResponseInterface
      * following function accepts data from
      * controllers and return a pre-setted view.
      **/
-    public function respond(array $data)
+    public function respond(array $data = null)
     {
         return view($this->view)->with('data',$data);
     }

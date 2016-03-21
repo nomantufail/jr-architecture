@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Requests\User\AddUserRequest;
+use App\Http\Requests\Requests\User\DeleteUserRequest;
 use App\Http\Responses\Responses\ApiResponse;
 use App\Transformers\Response\UserTransformer;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -24,4 +25,5 @@ class UsersController extends ApiController
         return $this->response
             ->respond($this->userTransformer->transform($request->all()));
     }
+
 }

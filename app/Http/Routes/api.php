@@ -21,6 +21,11 @@ Route::get('/user/add',
         'uses'=>'UsersController@store'
     ]
 );
+
+
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes

@@ -6,8 +6,8 @@ use App\Transformers\Transformer;
 
 abstract class Request
 {
-    public $transformedValues = [];
-    public $transformer = null;
+    private $transformedValues = [];
+    private $transformer = null;
     public function __construct(Transformer $transformer){
         $this->transformer = $transformer;
         $this->transformedValues = $this->transformer->transform(request()->all());

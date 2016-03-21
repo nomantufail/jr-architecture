@@ -207,6 +207,7 @@ return [
          * -----------------------------------------------------------
          * */
         'AddUserRequest' => \App\Http\Requests\Requests\User\AddUserRequest::class,
+        'UpdatePropertyRequest'=>\App\Http\Requests\Requests\Property\UpdatePropertyRequest::class
 
     ],
 

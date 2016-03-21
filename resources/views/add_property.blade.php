@@ -38,10 +38,7 @@
     <body>
         <div class="container">
             <div class="content">
-
-                <div class="title">Title :{{$data['P_t']}}</div>
-                <div class="title">Price :{{$data['p_p']}}</div>
-                <div class="title">Size :{{$data['p_s']}}</div>
+                <div class="title">{{$data['city_name']}}</div>
             </div>
         </div>
     </body>

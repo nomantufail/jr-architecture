@@ -25,7 +25,6 @@ class WebAuthenticator
         $customRequest = new $customRequest();
         if(!$customRequest->authenticate())
             return $this->response->setView('authenticationFails')->respond(['error'=>'user not authenticated']);
-
-        return $next($request);
+            return $next($request);
     }
 }
