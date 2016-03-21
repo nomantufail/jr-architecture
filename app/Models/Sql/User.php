@@ -10,4 +10,9 @@ class User extends Model
     protected $fillable = [
         'f_name', 'l_name',  'password', 'email', 'country_id', 'membership_plan_id'
     ];
+
+    public function agencies()
+    {
+        return $this->hasMany('App\Models\Sql\Agency');
+    }
 }

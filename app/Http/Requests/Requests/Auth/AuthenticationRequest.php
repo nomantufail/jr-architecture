@@ -16,7 +16,7 @@ use App\Transformers\Request\AuthenticateUserTransformer;
 class AuthenticationRequest extends Request implements RequestInterface{
 
     public function __construct(){
-        parent::__construct(new AuthenticateUserTransformer());
+        parent::__construct(new AuthenticateUserTransformer($this->getOriginalRequest()));
     }
 
     public function authorize(){

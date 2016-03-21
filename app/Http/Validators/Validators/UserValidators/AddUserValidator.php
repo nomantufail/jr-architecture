@@ -31,8 +31,8 @@ class AddUserValidator extends UserValidator implements ValidatorsInterface
     public function rules()
     {
         return [
-            'first_name' => 'required',
-            'last_name' => 'required',
+            'f_name' => 'required',
+            'l_name' => 'required',
             'email' => 'required|email|unique:users|max:255',
             'password' => 'required'
         ];

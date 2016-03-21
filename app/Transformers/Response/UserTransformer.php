@@ -11,12 +11,8 @@ namespace App\Transformers\Response;
 
 class UserTransformer extends ResponseTransformer{
 
-    public function transform($data){
-        return [
-            'name'=>$data->name,
-            'email' => $data->email,
-            'access_token' => $data->access_token
-        ];
+    public function transform($user){
+        return $user;
     }
 
     public function transformDocument($userObject)

@@ -20,12 +20,7 @@ class UsersRepository extends SqlRepository implements UsersRepoInterface
 
     public function getFirst(array $where)
     {
-        return (object)[
-            'name'=>'noman',
-            'email' => 'nomantufail100@gmail.com',
-            'password' => 'noman143',
-            'access_token' => null
-        ];
+        return User::where($where)->get()->first();
     }
 
     public function updateUser($user)
@@ -47,13 +42,6 @@ class UsersRepository extends SqlRepository implements UsersRepoInterface
 
     public function getUserDocument($userId)
     {
-        return (object)[
-            'id' => $userId,
-            'name'=>'noman',
-            'agency'=>[
-                'estate_name'=>'jr property',
-                'fax' => '03121212741'
-            ]
-        ];
+        return User::where('id','=',$userId)->with('agencies')->get()->first();
     }
 }

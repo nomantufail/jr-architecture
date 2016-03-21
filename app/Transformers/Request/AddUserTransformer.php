@@ -17,10 +17,10 @@ class AddUserTransformer extends RequestTransformer{
             'f_name'=>$this->request->get('f_name'),
             'email'=>$this->request->get('email'),
             'password'=>$this->request->get('password'),
-            'is_agent'=>$this->request->get('is_agent'),
-            'country_id' => (int)$this->request->get('country_id'),
-            'membership_plan_id' => (int)$this->request->get('membership_plan_id'),
-            'agency'=>$this->request->get('agency')
+            'is_agent'=>0,
+            'country_id' => 1,
+            'membership_plan_id' => 1,
+            'agency'=>null
         ];
     }
 } 

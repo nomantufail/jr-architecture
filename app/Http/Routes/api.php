@@ -14,7 +14,7 @@ Route::post('/login',
     [
         'middleware'=>
             [
-                //'apiValidate:authenticationRequest'
+                'apiValidate:authenticationRequest'
             ],
         'uses'=>'Auth\AuthController@login'
     ]
@@ -23,9 +23,7 @@ Route::post('/user/add',
     [
         'middleware'=>
             [
-                //'apiAuthenticate:addUserRequest',
-                //'apiAuthorize:addUserRequest',
-                //'apiValidate:addUserRequest'
+                'apiValidate:addUserRequest'
             ],
         'uses'=>'UsersController@store'
     ]

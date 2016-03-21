@@ -9,8 +9,9 @@
 namespace App\Libs\Auth;
 
 
+use App\Models\Sql\User;
 use Illuminate\Support\Facades\Auth;
-use App\Models\User;
+
 abstract class Authenticate
 {
     public function attempt(array $credentials)
