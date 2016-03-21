@@ -25,7 +25,6 @@ class ApiResponse extends AppResponse implements ResponseInterface
      * following function accepts data from
      * controllers and return a pre-setted view.
      **/
-
     public function respond(array $response, array $headers = []){
         $http_status = $this->getHttpStatus();
         $response['status'] = ($http_status == 200)?1:0;

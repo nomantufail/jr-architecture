@@ -160,6 +160,7 @@ return [
          * Repositories Service Providers...
          */
         App\Providers\Repositories\UsersRepositoryProvider::class,
+        App\Providers\Repositories\AgenciesRepositoryProvider::class,
 
     ],
 

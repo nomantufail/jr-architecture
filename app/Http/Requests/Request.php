@@ -17,8 +17,21 @@ abstract class Request
         return (isset($this->transformedValues[$key]))?$this->transformedValues[$key]:null;
     }
 
+    public function getOriginal($key){
+        return request()->get($key);
+    }
+
     public function all(){
         return $this->transformedValues;
+    }
+
+    public function allOriginal(){
+        return request()->all();
+    }
+
+    public function getOriginalRequest()
+    {
+        return request();
     }
 
     public function authenticate(){

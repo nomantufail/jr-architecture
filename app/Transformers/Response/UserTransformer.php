@@ -18,4 +18,9 @@ class UserTransformer extends ResponseTransformer{
             'access_token' => $data->access_token
         ];
     }
+
+    public function transformDocument($userObject)
+    {
+        return $userObject;
+    }
 } 

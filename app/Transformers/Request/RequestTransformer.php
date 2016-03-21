@@ -12,5 +12,9 @@ namespace App\Transformers\Request;
 use App\Transformers\Transformer;
 
 class RequestTransformer extends Transformer{
-
+    public $request;
+    public function __construct($request)
+    {
+        $this->request = $request;
+    }
 } 

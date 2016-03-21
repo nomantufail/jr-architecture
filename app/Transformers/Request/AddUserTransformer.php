@@ -11,9 +11,16 @@ namespace App\Transformers\Request;
 
 class AddUserTransformer extends RequestTransformer{
 
-    public function transform($data){
+    public function transform(){
         return [
-            'name'=>$data['username'],
+            'l_name'=>$this->request->get('l_name'),
+            'f_name'=>$this->request->get('f_name'),
+            'email'=>$this->request->get('email'),
+            'password'=>$this->request->get('password'),
+            'is_agent'=>$this->request->get('is_agent'),
+            'country_id' => (int)$this->request->get('country_id'),
+            'membership_plan_id' => (int)$this->request->get('membership_plan_id'),
+            'agency'=>$this->request->get('agency')
         ];
     }
 } 

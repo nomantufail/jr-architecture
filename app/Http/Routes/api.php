@@ -19,13 +19,13 @@ Route::post('/login',
         'uses'=>'Auth\AuthController@login'
     ]
 );
-Route::get('/user/add',
+Route::post('/user/add',
     [
         'middleware'=>
             [
-                'apiAuthenticate:addUserRequest',
-                'apiAuthorize:addUserRequest',
-                'apiValidate:addUserRequest'
+                //'apiAuthenticate:addUserRequest',
+                //'apiAuthorize:addUserRequest',
+                //'apiValidate:addUserRequest'
             ],
         'uses'=>'UsersController@store'
     ]
