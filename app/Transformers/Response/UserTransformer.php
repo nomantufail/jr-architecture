@@ -13,7 +13,9 @@ class UserTransformer extends ResponseTransformer{
 
     public function transform($data){
         return [
-            'username'=>$data['name'],
+            'name'=>$data->name,
+            'email' => $data->email,
+            'access_token' => $data->access_token
         ];
     }
 } 
