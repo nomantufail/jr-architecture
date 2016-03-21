@@ -21,6 +21,8 @@ class CreateAgenciesTable extends Migration
             $table->string('address');
             $table->string('email');
             $table->integer('user_id')->unsigned();
+            $table->timestamps();
+
 
             $table->timestamps();
 

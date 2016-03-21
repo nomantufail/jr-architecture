@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Requests\User\AddUserRequest;
+use App\Http\Requests\Requests\User\DeleteUserRequest;
 use App\Http\Responses\Responses\ApiResponse;
 use App\Repositories\Interfaces\Repositories\AgenciesRepoInterface;
 use App\Repositories\Interfaces\Repositories\UsersRepoInterface;
@@ -59,4 +60,5 @@ class UsersController extends ApiController
         }
         return true;
     }
+
 }

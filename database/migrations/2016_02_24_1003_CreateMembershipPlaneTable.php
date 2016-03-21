@@ -18,6 +18,7 @@ class CreateMembershipPlaneTable extends Migration
             $table->integer('hot');
             $table->integer('featured');
             $table->text('description');
+            $table->timestamps();
 
         });
     }

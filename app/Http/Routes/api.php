@@ -30,6 +30,11 @@ Route::post('/user/add',
         'uses'=>'UsersController@store'
     ]
 );
+
+
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
