@@ -3,7 +3,6 @@
     "query": {
         "filtered": {
             "filter": {
-
                 "bool": {
                     "must":[
                         {
@@ -147,7 +146,7 @@
                         },
                         {
                             "match_phrase":  {
-                                "description":"for sale"
+                                "purpose":"for sale"
                             }
                         }
                     ]
