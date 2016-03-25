@@ -10,6 +10,7 @@ namespace App\Repositories\Repositories\Sql;
 
 
 use App\Events\Events\User\UserCreated;
+use App\Libs\Json\Creators\Creators\UserJsonCreator;
 use App\Repositories\Interfaces\Repositories\UsersRepoInterface;
 use App\Models\Sql\User;
 use App\Repositories\Transformers\Sql\UserTransformer;
@@ -36,7 +37,7 @@ class UsersRepository extends SqlRepository implements UsersRepoInterface
     public function storeUser($userInfo)
     {
         $user = User::create($userInfo);
-        Event::fire(new UserCreated($user));
+        Event::fire(new UserCreated($this->fetchUserWithRelations($user->id)));
         return ($user == null)?null:$user->id;
     }
 
@@ -50,5 +51,15 @@ class UsersRepository extends SqlRepository implements UsersRepoInterface
     {
         $user = User::where('id','=',$userId)->with('document')->get()->first();
         return ($user->document == null)?null:$this->userTransformer->transform($user->document->decode());
+    }
+
+    public function fetchUserWithRelations($userId)
+    {
+        $user = User::where('id','=', $userId)
+            ->with('country')
+            ->with('membershipPlan')
+            ->with('agencies')
+            ->get()->first();
+        return $user;
     }
 }

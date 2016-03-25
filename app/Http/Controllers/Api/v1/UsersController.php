@@ -35,7 +35,7 @@ class UsersController extends ApiController
 
     public function getUser()
     {
-        $user = $this->userRepo->getFirst(['id'=>17]);
+        $user = $this->userRepo->fetchUserWithRelations(17);
         return $this->response->respond(['data'=>[
             'user'=>$this->userTransformer->transformDocument($user)
         ]]);

@@ -15,6 +15,18 @@ class User extends Model
     {
         return $this->hasMany('App\Models\Sql\Agency');
     }
+    public function country()
+    {
+        return $this->belongsTo('App\Models\Sql\Country');
+    }
+    public function properties()
+    {
+        return $this->hasMany('App\Models\Sql\Property');
+    }
+    public function membershipPlan()
+    {
+        return $this->belongsTo('App\Models\Sql\MembershipPlan');
+    }
     public function document()
     {
         return $this->hasOne('App\Models\Sql\UserDocument');

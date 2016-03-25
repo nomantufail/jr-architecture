@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMembershipPlaneTable extends Migration
+class CreateMembershipPlanesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateMembershipPlaneTable extends Migration
      */
     public function up()
     {
-        Schema::create('membership_planes', function (Blueprint $table) {
+        Schema::create('membership_plans', function (Blueprint $table) {
             $table->increments('id');
             $table->string('plane_name');
             $table->integer('hot');
@@ -30,6 +30,6 @@ class CreateMembershipPlaneTable extends Migration
      */
     public function down()
     {
-        Schema::drop('membership_planes');
+        Schema::drop('membership_plans');
     }
 }

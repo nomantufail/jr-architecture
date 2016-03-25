@@ -38,7 +38,6 @@ class UsersJsonRepository extends SqlRepository implements UsersRepoInterface
     public function store($userId, $userJson)
     {
         $userJson = UserJson::create(['user_id' => $userId, 'json'=>$userJson]);
-        //Event::fire(new UserJsonCreated($userJson));
         return ($userJson == null)?null:$userJson->id;
     }
 

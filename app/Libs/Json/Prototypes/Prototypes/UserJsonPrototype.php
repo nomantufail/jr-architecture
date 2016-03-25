@@ -15,6 +15,7 @@ use App\Models\Sql\User;
 class UserJsonPrototype extends JsonPrototype implements JsonPrototypeInterface
 {
     private $user;
+
     public function __construct(User $user)
     {
         $this->user = $user;
@@ -22,6 +23,35 @@ class UserJsonPrototype extends JsonPrototype implements JsonPrototypeInterface
 
     public function prototype()
     {
-        return $this->user->toJson();
+        $jsonObj = (object)[
+            'email' => $this->user->email,
+            'fName' => $this->user->f_name,
+            'lName' => $this->user->l_name,
+            'phone' => $this->user->phone,
+            'mobile' => $this->user->mobile,
+            'fax' => $this->user->fax,
+            'address' => $this->user->address,
+            'zipCode' => $this->user->zipcode,
+            'country' => $this->user->country->country,
+            'membershipPlan' => $this->membershipPlan(),
+            'agencies' => $this->agencies()
+        ];
+        return json_encode($jsonObj);
+    }
+
+    public function membershipPlan()
+    {
+        return (object)[
+            'id' => $this->user->membershipPlan->id,
+            'plan_name' => $this->user->membershipPlan->plan_name,
+            'hot' => $this->user->membershipPlan->hot,
+            'featured' => $this->user->membershipPlan->featured,
+            'description' => $this->user->membershipPlan->description,
+        ];
+    }
+
+    public function agencies()
+    {
+        return (object)$this->user->agencies->toArray();
     }
 }

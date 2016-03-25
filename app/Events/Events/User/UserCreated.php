@@ -4,6 +4,7 @@ namespace App\Events\Events\User;
 
 use App\Events\Events\Event;
 use App\Models\Sql\User;
+use App\Repositories\Repositories\Sql\UsersRepository;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
