@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Requests\User\AddUserRequest;
@@ -33,7 +33,16 @@ class UsersController extends ApiController
         $this->agencyRepo = $agenciesRepository;
     }
 
-    public function store(AddUserRequest $request){
+    public function getUser()
+    {
+        $user = $this->userRepo->getFirst(['id'=>17]);
+        return $this->response->respond(['data'=>[
+            'user'=>$this->userTransformer->transformDocument($user)
+        ]]);
+    }
+
+    public function store(AddUserRequest $request)
+    {
         $userId = $this->userRepo->storeUser($request->getUserInfo());
 
         if($userId == null)

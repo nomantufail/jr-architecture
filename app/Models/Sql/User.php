@@ -15,4 +15,8 @@ class User extends Model
     {
         return $this->hasMany('App\Models\Sql\Agency');
     }
+    public function document()
+    {
+        return $this->hasOne('App\Models\Sql\UserDocument');
+    }
 }

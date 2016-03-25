@@ -16,7 +16,7 @@ class RouteServiceProvider extends ServiceProvider
      */
 
     protected $webNamespace = 'App\Http\Controllers\Web';
-    protected $apiNamespace = 'App\Http\Controllers\Api';
+    protected $v1ApiNamespace = 'App\Http\Controllers\Api\v1';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -41,12 +41,12 @@ class RouteServiceProvider extends ServiceProvider
     {
         //web routes
         $router->group(['prefix'=>'web', 'namespace' => $this->webNamespace], function ($router) {
-            require app_path('Http/Routes/web.php');
+            require app_path('Http/Routes/Web/routes.php');
         });
 
         //api routes
-        $router->group(['prefix' => 'api', 'namespace' => $this->apiNamespace], function ($router) {
-            require app_path('Http/Routes/api.php');
+        $router->group(['prefix' => 'api/v1', 'namespace' => $this->v1ApiNamespace], function ($router) {
+            require app_path('Http/Routes/Api/routes.php');
         });
     }
 }

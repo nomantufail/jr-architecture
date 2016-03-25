@@ -12,10 +12,10 @@ use App\Models\Sql\User;
 use App\Models\Sql\UserDocument;
 use App\Repositories\Interfaces\Transformers\RepositoryTransformerInterface;
 
-class UserTransformer extends SqlTransformer implements RepositoryTransformerInterface
+class UserJsonTransformer extends SqlTransformer implements RepositoryTransformerInterface
 {
-    public function transform($user)
+    public function transform($userJson)
     {
-        return $user;
+        return $userJson;
     }
 }

@@ -10,10 +10,14 @@ namespace App\Repositories\Transformers\Elastic;
 
 use App\Repositories\Interfaces\Transformers\RepositoryTransformerInterface;
 
-abstract class UserTransformer extends ElasticTransformer implements RepositoryTransformerInterface
+class UserTransformer extends ElasticTransformer implements RepositoryTransformerInterface
 {
     public function transform($user)
     {
-
+        return [
+            'f_name' => $user->f_name,
+            'l_name' => $user->l_name,
+            'email' => $user->email
+        ];
     }
 }

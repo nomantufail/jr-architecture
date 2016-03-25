@@ -11,7 +11,8 @@ namespace App\Transformers\Response;
 
 class UserTransformer extends ResponseTransformer{
 
-    public function transform($user){
+    public function transform($user)
+    {
         return $user;
     }
 

@@ -6,7 +6,7 @@
  * Time: 11:07 AM
  */
 
-namespace App\Repositories\Transformers\Elastic;
+namespace App\Repositories\Transformers\Sql;
 
 
 use App\Repositories\Transformers\Transformer as RepositoriesTransformer;

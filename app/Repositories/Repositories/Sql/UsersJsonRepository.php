@@ -10,34 +10,36 @@ namespace App\Repositories\Repositories\Sql;
 
 
 use App\Events\Events\User\UserCreated;
+use App\Models\Sql\UserJson;
 use App\Repositories\Interfaces\Repositories\UsersRepoInterface;
 use App\Models\Sql\User;
+use App\Repositories\Transformers\Sql\UserJsonTransformer;
 use App\Repositories\Transformers\Sql\UserTransformer;
 use Illuminate\Support\Facades\Event;
 
-class UsersRepository extends SqlRepository implements UsersRepoInterface
+class UsersJsonRepository extends SqlRepository implements UsersRepoInterface
 {
-    private $userTransformer;
+    private $userJsonTransformer;
     public function __construct(){
-        $this->userTransformer = new UserTransformer();
+        $this->userJsonTransformer = new UserJsonTransformer();
     }
 
     public function getFirst(array $where = [])
     {
-        $user = User::where($where)->with('document')->get()->first();
-        return ($user->document->json == null)?null:$this->userTransformer->transform($user->document->decode());
+        $userJson = UserJson::where($where)->get()->first();
+        return $this->userJsonTransformer->transform($userJson);
     }
 
-    public function updateUser($user)
+    public function update($userJson)
     {
         return true;
     }
 
-    public function storeUser($userInfo)
+    public function store($userId, $userJson)
     {
-        $user = User::create($userInfo);
-        Event::fire(new UserCreated($user));
-        return ($user == null)?null:$user->id;
+        $userJson = UserJson::create(['user_id' => $userId, 'json'=>$userJson]);
+        //Event::fire(new UserJsonCreated($userJson));
+        return ($userJson == null)?null:$userJson->id;
     }
 
     public function deleteUser($userId)

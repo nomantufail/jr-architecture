@@ -9,6 +9,8 @@
 namespace App\Repositories\Interfaces\Transformers;
 
 
+use App\Models\Sql\UserDocument;
+
 interface RepositoryTransformerInterface
 {
     public function transform($object);

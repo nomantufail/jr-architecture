@@ -10,6 +10,16 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+
+
+Route::post('/get/user',
+    [
+        'uses'=>'UsersController@getUser'
+    ]
+);
+
+
+
 Route::post('/login',
     [
         'middleware'=>
@@ -19,6 +29,7 @@ Route::post('/login',
         'uses'=>'Auth\AuthController@login'
     ]
 );
+
 Route::post('/user/add',
     [
         'middleware'=>

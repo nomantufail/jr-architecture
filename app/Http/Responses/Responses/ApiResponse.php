@@ -33,7 +33,7 @@ class ApiResponse extends AppResponse implements ResponseInterface
         if(isset($response['access_token']))
             $access_token = $response['access_token'];
         else if(isset($response['data']) && isset($response['data']['user'])){
-            $access_token = $response['data']['user']['access_token'];
+            $access_token = $response['data']['user']->access_token;
         }else{
             $access_token = $this->getAccessToken();
         }
